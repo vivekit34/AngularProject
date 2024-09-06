@@ -1,0 +1,21 @@
+<div>
+    <h2>Child 2</h2>
+    <div>
+        <div>
+            First Name: <input type="text" #efname>
+        </div>
+        <div>
+            Last Name: <input type="text" #elname>
+        </div>
+        <div>
+            Email: <input type="text" #eemail>
+        </div>
+        <div>
+          Phone: <input type="text" #ephone>
+      </div>
+
+    </div>    
+    <button type="button" class="btn btn-primary" (click)="child2AddUser(efname.value, elname.value, eemail.value, ephone.value)">
+        Add an User
+    </button>
+</div>

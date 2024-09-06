@@ -1,0 +1,102 @@
+----------------------------------------------------------------
+<!-- Assignment 1 -->
+<h1>Toggle Assignment</h1>
+<p [hidden]="showFlag">It is a long established fact that a reader will be distracted by the readable content of a page 
+    when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+     of letters, as opposed to using
+     'Content here, content here', making it look like readable English. Many desktop publishing 
+     packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years,
+      sometimes by accident, sometimes on purpose (injected humour and the like).
+</p>
+<button (click)="showFlag=!showFlag">{{showFlag? 'Show': 'Hide'}}</button>
+<br/>
+<br/>
+<br/>
+----------------------------------------------------------------
+<br/>
+<!-- Assignment-2 -->
+<h1>Remaining Chars assignment</h1>
+<textarea maxLength="100" [(ngModel)]="msg"></textarea>
+<br/>
+<div>Remaining Chars:{{100 - msg.length}}</div>
+
+<br/>
+<br/>
+<br/>
+----------------------------------------------------------------
+<br/>
+<!-- Assignment-3 -->
+ <h1> Create dropdown with state names, when user changes dropdown value, print the selected dropdown value in a paragraph</h1>
+ <select [(ngModel)]="state">
+    <option>UP</option>
+    <option>UK</option>
+    <option>DEL</option>
+    <option>GUR</option>
+    <option>HR</option>
+    <option>KR</option>
+    <option>BR</option>
+ </select>
+ <p>Selected State: {{state}}</p>
+
+ <br/>
+<br/>
+<br/>
+----------------------------------------------------------------
+<br/>
+<!-- Assignment-4 -->
+<h1>have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations</h1>
+<input type="number" [(ngModel)]="num1">
+<input type="number" [(ngModel)]="num2">
+<select [(ngModel)]="op" (change)="calculateValue()">
+    <option>+</option>
+    <option>-</option>
+    <option>*</option>
+    <option>/</option>
+ </select>
+ <h3>Result: {{result}}</h3>
+<br/>
+<br/>
+<br/>
+----------------------------------------------------------------
+<br/>
+<!-- Assignment-5 -->
+<br/>
+<br/>
+<h1>Show or hide Password</h1>
+<input [type]="show?'password':'text'">
+<button (click)="showorhide()">{{show? 'SHOW': 'HIDE'}}</button>
+<br/>
+<br/>
+<br/>
+----------------------------------------------------------------
+<br/>
+<!-- Assignment-7 -->
+<br/>
+<h1>create a counter example with 3 controls(increment,decrement,reset)</h1>
+<br/>
+
+<h1>Counter: {{counterResult}}</h1>
+<button (click)="update('reset')">Reset</button>
+<button (click)="update('increase')">Increase</button>
+<button (click)="update('decrease')">Decrease</button>
+<br/>
+<br/>
+----------------------------------------------------------------
+<br/>
+<!-- Assignment-6 -->
+<br/>
+<h1>Impement dark/light mode
+</h1>
+<button></button>
+
+
+<input type="number" #num3>
+<input type="number" ref-num4>
+<br/>
+<br/>
+<br/>
+<br/>
+<button (click)="add(num3, num4)">Show</button>
+
+
+<button (click)="changeBackground()">{{isDark? 'DARK': 'LIGHT'}}</button>

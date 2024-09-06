@@ -1,0 +1,106 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">First_Name</th>
+        <th scope="col">Last_name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    @for(emp of employees; track emp.id){
+        <tr>
+            <!-- <th scope="row">1</th> -->
+            <td>{{emp.name.firstname}}</td>
+            <td>{{emp.name.lastname}}</td>
+            <td>{{emp.email}}</td>
+            <td>{{emp.phone}}</td>
+            <td>
+              <button (click)="viewEmployee(emp)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
+                View
+            </button>
+                <button type="button" class="btn btn-danger"(click)="deleteEmployee(emp)" >Delete</button>
+            </td>
+          </tr>
+    }
+    </tbody>
+  </table>
+<div>
+    <h2>Add an Employee!</h2>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEmployeePopUp" >
+        Add an Employee
+    </button>
+</div>
+
+
+<!-- Modal For View Employee-->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">
+                    <ng-content select="#title"></ng-content>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    First Name: {{firstname}}
+                </div>
+                <div>
+                    Last Name: {{lastname}}
+                </div>
+                <div>
+                    Email: {{email}}
+                </div>
+                <div>
+                  Phone: {{phone}}
+              </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal For Add Employee-->
+<div class="modal fade" id="addEmployeePopUp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">
+                    <ng-content select="#title"></ng-content>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    First Name: <input type="text" #efname>
+                </div>
+                <div>
+                    Last Name: <input type="text" #elname>
+                </div>
+                <div>
+                    Email: <input type="text" #eemail>
+                </div>
+                <div>
+                  Phone: <input type="text" #ephone>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="addEmployee(efname.value, elname.value, eemail.value, ephone.value)" data-bs-dismiss="modal">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
